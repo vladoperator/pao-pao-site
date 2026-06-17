@@ -1,0 +1,8 @@
+{
+  "name": "Pao Pao Bubble Tea",
+  "description": "Premium digital menu and online ordering platform for Pao Pao - Taiwan Bubble Tea Cult.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
