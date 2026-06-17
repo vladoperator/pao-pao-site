@@ -33,9 +33,9 @@ const getNextColor = () => {
 
 export const PRODUCTS: Product[] = [
   // MILKY SERIES (85/94)
-  { id: 'm1', categoryId: 'milky', name: { en: 'Thai Milk Tea', ro: 'Ceai cu Lapte Thai', ru: 'Тайский Молочный Чай' }, basePrice: { M: 85, L: 94 }, imageColor: getNextColor() },
+  { id: 'm1', categoryId: 'milky', name: { en: 'Thai Milk Tea', ro: 'Ceai cu Lapte Thai', ru: 'Тайский Молочный Чай' }, basePrice: { M: 85, L: 94 }, imageColor: getNextColor(), imageUrl: 'https://images.unsplash.com/photo-1628186105307-e819b1613589?w=800&q=80' },
   { id: 'm2', categoryId: 'milky', name: { en: 'Strawberry Mango Milk', ro: 'Lapte cu Căpșuni și Mango', ru: 'Клубнично-манговое Молоко' }, basePrice: { M: 85, L: 94 }, imageColor: getNextColor() },
-  { id: 'm3', categoryId: 'milky', name: { en: 'Pao Taro', ro: 'Pao Taro', ru: 'Пао Таро' }, basePrice: { M: 85, L: 94 }, imageColor: getNextColor() },
+  { id: 'm3', categoryId: 'milky', name: { en: 'Pao Taro', ro: 'Pao Taro', ru: 'Пао Таро' }, basePrice: { M: 85, L: 94 }, imageColor: getNextColor(), imageUrl: 'https://images.unsplash.com/photo-1558857563-b371131ea0be?w=800&q=80' },
   { id: 'm4', categoryId: 'milky', name: { en: 'Brown Brulee', ro: 'Brown Brulee', ru: 'Браун Брюле' }, basePrice: { M: 85, L: 94 }, imageColor: getNextColor() },
   { id: 'm5', categoryId: 'milky', name: { en: 'Original Milk Tea', ro: 'Ceai cu Lapte Original', ru: 'Оригинальный Молочный Чай' }, basePrice: { M: 85, L: 94 }, imageColor: getNextColor() },
   { id: 'm6', categoryId: 'milky', name: { en: 'Coconut Mango Milk', ro: 'Lapte cu Mango și Cocos', ru: 'Кокосово-манговое Молоко' }, basePrice: { M: 85, L: 94 }, imageColor: getNextColor() },
@@ -52,7 +52,7 @@ export const PRODUCTS: Product[] = [
   { id: 'c6', categoryId: 'coffee', name: { en: 'Taro Coffee', ro: 'Cafea Taro', ru: 'Таро Кофе' }, basePrice: { M: 90, L: 98 }, imageColor: getNextColor() },
   { id: 'c7', categoryId: 'coffee', name: { en: 'Strawberry Coffee', ro: 'Cafea cu Căpșuni', ru: 'Клубничный Кофе' }, basePrice: { M: 90, L: 98 }, imageColor: getNextColor() },
   { id: 'c8', categoryId: 'coffee', name: { en: 'Pao Ice Latte', ro: 'Pao Ice Latte', ru: 'Пао Айс Латте' }, basePrice: { M: 90, L: 98 }, imageColor: getNextColor() },
-  { id: 'c9', categoryId: 'coffee', name: { en: 'Brown Sugar Coffee', ro: 'Cafea cu Zahăr Brun', ru: 'Кофе с Тростниковым Сахаром' }, basePrice: { M: 90, L: 98 }, imageColor: getNextColor() },
+  { id: 'c9', categoryId: 'coffee', name: { en: 'Brown Sugar Coffee', ro: 'Cafea cu Zahăr Brun', ru: 'Кофе с Тростниковым Сахаром' }, basePrice: { M: 90, L: 98 }, imageColor: getNextColor(), imageUrl: 'https://images.unsplash.com/photo-1629851602717-313d3392ebbc?w=800&q=80' },
 
   // WINTER SPECIALS (98/108)
   { id: 'w1', categoryId: 'winter', name: { en: 'Mocha Oreo', ro: 'Mocha Oreo', ru: 'Мокко Орео' }, basePrice: { M: 98, L: 108 }, imageColor: getNextColor() },
@@ -61,7 +61,7 @@ export const PRODUCTS: Product[] = [
   { id: 'w4', categoryId: 'winter', name: { en: 'Pao Cacao', ro: 'Pao Cacao', ru: 'Пао Какао' }, basePrice: { M: 98, L: 108 }, imageColor: getNextColor() },
 
   // FRUIT TEA (81/90)
-  { id: 'f1', categoryId: 'fruit', name: { en: 'Lychee Peachee', ro: 'Lychee Peachee', ru: 'Линчи Пичи' }, basePrice: { M: 81, L: 90 }, imageColor: getNextColor() },
+  { id: 'f1', categoryId: 'fruit', name: { en: 'Lychee Peachee', ro: 'Lychee Peachee', ru: 'Линчи Пичи' }, basePrice: { M: 81, L: 90 }, imageColor: getNextColor(), imageUrl: 'https://images.unsplash.com/photo-1596752002302-3c1db17da4b7?w=800&q=80' },
   { id: 'f2', categoryId: 'fruit', name: { en: 'Grapefruit', ro: 'Grapefruit', ru: 'Грейпфрут' }, basePrice: { M: 81, L: 90 }, imageColor: getNextColor() },
   { id: 'f3', categoryId: 'fruit', name: { en: 'Raspberry', ro: 'Zmeură', ru: 'Малина' }, basePrice: { M: 81, L: 90 }, imageColor: getNextColor() },
   { id: 'f4', categoryId: 'fruit', name: { en: 'Strawberry', ro: 'Căpșună', ru: 'Клубника' }, basePrice: { M: 81, L: 90 }, imageColor: getNextColor() },
@@ -76,5 +76,5 @@ export const PRODUCTS: Product[] = [
   { id: 'f13', categoryId: 'fruit', name: { en: 'Peach Cherry', ro: 'Piersică și Cireșe', ru: 'Персик и Вишня' }, basePrice: { M: 81, L: 90 }, imageColor: getNextColor() },
 
   // MATCHA SERIES (97/105)
-  { id: 'ma1', categoryId: 'matcha', name: { en: 'Ceremonial Pao Matcha', ro: 'Ceremonial Pao Matcha', ru: 'Церемониальная Пао Матча' }, basePrice: { M: 97, L: 105 }, imageColor: getNextColor() },
+  { id: 'ma1', categoryId: 'matcha', name: { en: 'Ceremonial Pao Matcha', ro: 'Ceremonial Pao Matcha', ru: 'Церемониальная Пао Матча' }, basePrice: { M: 97, L: 105 }, imageColor: getNextColor(), imageUrl: 'https://images.unsplash.com/photo-1582782528770-4b2a8db4811e?w=800&q=80' },
 ];

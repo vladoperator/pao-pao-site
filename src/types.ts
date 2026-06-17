@@ -17,6 +17,7 @@ export interface Product {
   description?: Record<Language, string>;
   basePrice: Record<Size, number>;
   imageColor: string; // Used for gradient placeholder if no image
+  imageUrl?: string;
 }
 
 export interface Category {

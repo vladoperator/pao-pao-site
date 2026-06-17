@@ -3,7 +3,12 @@ import { useI18n, useCart } from '../Store';
 import { ShoppingBag, Globe, Menu, X } from 'lucide-react';
 import { Language } from '../types';
 
-export function Header() {
+interface HeaderProps {
+  currentView: 'home' | 'menu';
+  onNavigate: (view: 'home' | 'menu') => void;
+}
+
+export function Header({ currentView, onNavigate }: HeaderProps) {
   const { language, setLanguage, t } = useI18n();
   const { cartCount, setIsCartOpen } = useCart();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -20,21 +25,64 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center md:flex-col items-start justify-center gap-0">
-            <span className="font-sans font-black text-2xl tracking-tighter uppercase leading-none text-white">
-              pào pào
-            </span>
-            <span className="hidden md:block font-sans text-[10px] font-medium tracking-[0.3em] opacity-60 uppercase text-white mt-1">
-              Taiwan Bubble Tea Cult
-            </span>
+          <div 
+            className="flex-shrink-0 flex items-center gap-3 cursor-pointer group"
+            onClick={() => onNavigate('home')}
+          >
+            <div className="relative w-14 h-14 flex flex-col items-center justify-center font-display font-black text-white text-2xl leading-[0.8] tracking-tighter lowercase group-hover:scale-105 transition-transform">
+              <span className="relative z-10 w-full text-center pr-2">pào</span>
+              <span className="relative z-10 w-full text-center pl-2">pào</span>
+              
+              {/* Abstract decorative swooshes and dots from the logo */}
+              <svg className="absolute inset-x-[-20%] inset-y-[-10%] w-[140%] h-[120%] text-white pointer-events-none stroke-white fill-white" viewBox="0 0 100 100">
+                {/* Horizontal dash mid-left */}
+                <path d="M 20 40 L 28 40" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                {/* Top left arc/dash */}
+                <path d="M 38 20 Q 42 16 46 16" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+                {/* Top center thick angled line */}
+                <path d="M 52 22 L 56 30" strokeWidth="5" strokeLinecap="round" fill="none" />
+                {/* Mid left curved dash */}
+                <path d="M 18 52 Q 22 55 18 60" strokeWidth="3" strokeLinecap="round" fill="none" />
+                {/* Bottom left curve */}
+                <path d="M 38 82 Q 42 78 48 80" strokeWidth="3" strokeLinecap="round" fill="none" />
+                {/* Center right dash */}
+                <path d="M 64 54 L 74 54" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                {/* Right mid dot */}
+                <circle cx="84" cy="48" r="2.5" />
+                {/* Bottom right curve */}
+                <path d="M 75 75 Q 72 68 76 60" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                {/* Bottom mid dot */}
+                <circle cx="66" cy="82" r="2.5" />
+              </svg>
+            </div>
+            
+            <div className="hidden md:flex flex-col items-start justify-center mt-1">
+              <span className="font-sans text-[11px] font-bold tracking-[0.25em] leading-[1.2] text-white uppercase">
+                Taiwan
+              </span>
+              <span className="font-sans text-[11px] font-bold tracking-[0.25em] leading-[1.2] text-white/80 uppercase">
+                Bubble Tea Cult
+              </span>
+            </div>
           </div>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center space-x-8 font-sans text-xs font-bold uppercase tracking-widest text-white">
-            <a href="#milky" className="opacity-60 hover:opacity-100 transition-opacity">Milky Series</a>
-            <a href="#coffee" className="opacity-60 hover:opacity-100 transition-opacity">Coffee Series</a>
-            <a href="#fruit" className="opacity-60 hover:opacity-100 transition-opacity">Fruit Tea</a>
-            <a href="#matcha" className="opacity-60 hover:opacity-100 transition-opacity">Matcha Series</a>
+            {currentView === 'home' ? (
+              <button 
+                onClick={() => onNavigate('menu')}
+                className="opacity-60 hover:opacity-100 transition-opacity"
+              >
+                Full Menu
+              </button>
+            ) : (
+              <>
+                <a href="#milky" className="opacity-60 hover:opacity-100 transition-opacity">Milky Series</a>
+                <a href="#coffee" className="opacity-60 hover:opacity-100 transition-opacity">Coffee Series</a>
+                <a href="#fruit" className="opacity-60 hover:opacity-100 transition-opacity">Fruit Tea</a>
+                <a href="#matcha" className="opacity-60 hover:opacity-100 transition-opacity">Matcha Series</a>
+              </>
+            )}
           </nav>
 
           {/* Controls */}

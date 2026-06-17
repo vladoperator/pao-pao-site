@@ -88,20 +88,21 @@ export function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
             className="fixed inset-x-0 bottom-0 z-50 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-full sm:max-w-xl sm:rounded-3xl bg-[#0a051a]/80 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
           >
             {/* Header / Graphic */}
-            <div className="relative h-40 sm:h-48 overflow-hidden bg-white/5 border-b border-white/10 flex items-end p-6">
+            <div className={`relative h-40 sm:h-56 overflow-hidden bg-white/5 border-b border-white/10 flex items-end p-6 ${product.imageUrl ? 'bg-cover bg-center' : ''}`} style={product.imageUrl ? { backgroundImage: `url(${product.imageUrl})` } : {}}>
               <div className={`absolute inset-0 bg-gradient-to-br ${product.imageColor} opacity-20`} />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a051a] via-[#0a051a]/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a051a] via-[#0a051a]/60 to-transparent mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a051a] via-transparent to-transparent" />
               
               <button 
                 onClick={onClose}
-                className="absolute top-4 right-4 p-2 bg-white/10 backdrop-blur border border-white/10 rounded-full text-white hover:bg-white/20 transition-colors"
+                className="absolute top-4 right-4 p-2 bg-black/40 backdrop-blur border border-white/10 rounded-full text-white hover:bg-white/20 transition-colors z-20"
                 aria-label={t('close')}
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="relative z-10 w-full">
-                <h2 className="font-sans text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">
+                <h2 className="font-sans text-2xl sm:text-4xl font-black text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
                   {product.name[language]}
                 </h2>
               </div>
